@@ -11,6 +11,7 @@
     "start": "react-native start"
   },
   "dependencies": {
+    "query-string": "^6.4.2",
     "react": "16.8.3",
     "react-native": "0.59.3",
     "react-native-gesture-handler": "^1.1.0",
