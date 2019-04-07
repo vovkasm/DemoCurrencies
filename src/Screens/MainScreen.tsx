@@ -1,8 +1,10 @@
+import { observer } from 'mobx-react'
 import React from 'react'
 import { Button, StyleSheet, View } from 'react-native'
 
 import Application from 'src/Application'
 
+@observer
 export default class MainScreen extends React.Component {
   render() {
     return (

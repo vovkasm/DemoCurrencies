@@ -8,6 +8,7 @@ import {
 
 import Api from 'src/Api'
 import { createAppComponentProvider } from 'src/appComponentProvider'
+import FilterScreen from 'src/Screens/FilterScreen'
 import ListScreen from 'src/Screens/ListScreen'
 import MainScreen from 'src/Screens/MainScreen'
 import { ExchangeRatesViewModel } from './Model/ExchangeRatesViewModel'
@@ -37,6 +38,7 @@ export default class Application {
   bootstrap() {
     const AppNavigator = createStackNavigator(
       {
+        Filter: { screen: FilterScreen },
         List: { screen: ListScreen },
         Main: { screen: MainScreen },
       },
@@ -52,6 +54,10 @@ export default class Application {
     const model = new ExchangeRatesViewModel(this.api)
     model.load()
     this.navigator.dispatch(NavigationActions.navigate({ params: { model }, routeName: 'List' }))
+  }
+
+  showSymbolsFilter(model: ExchangeRatesViewModel) {
+    this.navigator.dispatch(NavigationActions.navigate({ params: { model }, routeName: 'Filter' }))
   }
 
   setNavigator(navigator: NavigationContainerComponent) {

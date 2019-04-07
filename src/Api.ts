@@ -4,7 +4,7 @@ interface IApiConfig {
   endpoint: string
 }
 
-interface IExchangeRatesParams {
+export interface IExchangeRatesParams {
   symbols?: string[]
   base?: string
 }

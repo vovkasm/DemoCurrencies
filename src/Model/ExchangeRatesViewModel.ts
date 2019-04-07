@@ -1,6 +1,6 @@
-import { computed, IObservableArray, observable } from 'mobx'
+import { action, computed, IObservableArray, observable } from 'mobx'
 
-import Api from 'src/Api'
+import Api, { IExchangeRatesParams } from 'src/Api'
 import { ExchangeRates } from 'src/Model/ExchangeRates'
 
 export class ExchangeRatesViewModel {
@@ -21,8 +21,12 @@ export class ExchangeRatesViewModel {
   }
 
   load() {
+    const params: IExchangeRatesParams = {}
+    if (this.symbols.length > 0) {
+      params.symbols = this.symbols
+    }
     this.api
-      .fetchExchangeRates()
+      .fetchExchangeRates(params)
       .then((res) => {
         const rates = this.rates
         rates.base = res.base
@@ -35,5 +39,14 @@ export class ExchangeRatesViewModel {
       .finally(() => {
         this.loading = false
       })
+  }
+
+  @action
+  setFilter(text: string) {
+    const symbols = text
+      .split(',')
+      .map((val) => val.trim())
+      .filter((val) => !!val)
+    this.symbols.replace(symbols)
   }
 }

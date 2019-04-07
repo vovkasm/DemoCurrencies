@@ -1,6 +1,7 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Button, Text, View } from 'react-native'
 
+import Application from 'src/Application'
 import { ExchangeRatesViewModel } from 'src/Model/ExchangeRatesViewModel'
 
 interface IProps {
@@ -13,7 +14,12 @@ export class SymbolsFilter extends React.Component<IProps> {
     return (
       <View>
         <Text>Фильтр: {model.filterText}</Text>
+        <Button title="Изменить" onPress={this.onPress} />
       </View>
     )
+  }
+
+  private onPress = () => {
+    Application.instance.showSymbolsFilter(this.props.model)
   }
 }
