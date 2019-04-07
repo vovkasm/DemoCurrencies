@@ -1,5 +1,3 @@
-import { AppRegistry } from 'react-native'
+import Application from 'src/Application'
 
-import MainScreen from 'src/Screens/MainScreen'
-
-AppRegistry.registerComponent('DemoCurrencies', () => MainScreen)
+Application.instance.bootstrap()
