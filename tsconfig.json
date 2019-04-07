@@ -12,16 +12,9 @@
         "noFallthroughCasesInSwitch": true,
         "noImplicitReturns": true,
         "noUnusedLocals": true,
-        "paths": {
-            "@vovkasm/react-native-sound": ["types/react-native-sound.d.ts"],
-            "jest": ["node_modules/@types/jest/index.d.ts"],
-            "react-native-fs": ["types/react-native-fs.d.ts"],
-            "react-native-navigation-lite": ["react-native-navigation-lite/src/index"]
-        },
         "preserveSymlinks": true,
         "strict": true,
         "target": "es6",
-        "typeRoots": ["types"],
         "types": ["react", "react-native"]
     },
     "exclude": [ "jest", "node_modules", "scripts" ]
