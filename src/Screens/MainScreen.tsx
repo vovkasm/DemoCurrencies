@@ -6,7 +6,7 @@ const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
 })
 
-export default class App extends React.Component {
+export default class MainScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>

@@ -1,5 +1,5 @@
 import { AppRegistry } from 'react-native'
 
-import App from 'src/App'
+import MainScreen from 'src/Screens/MainScreen'
 
-AppRegistry.registerComponent('DemoCurrencies', () => App)
+AppRegistry.registerComponent('DemoCurrencies', () => MainScreen)
