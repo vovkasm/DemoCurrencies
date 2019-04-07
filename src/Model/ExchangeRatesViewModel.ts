@@ -1,4 +1,4 @@
-import { IObservableArray, observable } from 'mobx'
+import { computed, IObservableArray, observable } from 'mobx'
 
 import Api from 'src/Api'
 import { ExchangeRates } from 'src/Model/ExchangeRates'
@@ -9,6 +9,12 @@ export class ExchangeRatesViewModel {
   @observable loading: boolean = true
 
   private api: Api
+
+  @computed
+  get filterText(): string {
+    if (this.symbols.length === 0) return 'нет'
+    return this.symbols.sort().join(',')
+  }
 
   constructor(api: Api) {
     this.api = api

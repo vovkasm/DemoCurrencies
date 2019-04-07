@@ -4,6 +4,7 @@ import { StyleSheet, Text } from 'react-native'
 import { NavigationScreenProps, ScrollView } from 'react-navigation'
 
 import { ExchangeRow } from 'src/Elements/ExchangeRow'
+import { SymbolsFilter } from 'src/Elements/SymbolsFilter'
 import { ExchangeRatesViewModel } from 'src/Model/ExchangeRatesViewModel'
 
 interface IProps {
@@ -17,7 +18,12 @@ export default class ListScreen extends React.Component<NavigationScreenProps<IP
   }
 
   render() {
-    return <ScrollView contentContainerStyle={styles.container}>{this.renderContent()}</ScrollView>
+    return (
+      <ScrollView contentContainerStyle={styles.container}>
+        <SymbolsFilter model={this.model} />
+        {this.renderContent()}
+      </ScrollView>
+    )
   }
 
   private renderContent() {
