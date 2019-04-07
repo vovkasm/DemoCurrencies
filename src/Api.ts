@@ -12,7 +12,7 @@ interface IExchangeRatesParams {
 interface IApiResult {
   base: string
   date: string
-  rates: { [x: string]: number }
+  rates: Record<string, number>
 }
 
 export default class Api {

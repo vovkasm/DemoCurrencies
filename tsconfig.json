@@ -5,7 +5,7 @@
         "esModuleInterop": true,
         "experimentalDecorators": true,
         "jsx": "react-native",
-        "lib":[ "es2015", "es2016" ],
+        "lib":[ "es2018" ],
         "module": "es6",
         "moduleResolution": "node",
         "noEmit": true,
