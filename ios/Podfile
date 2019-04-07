@@ -1,0 +1,32 @@
+platform :ios, '9.3'
+
+target 'DemoCurrencies' do
+  pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    'Core',
+    'CxxBridge',
+    'RCTAnimation',
+    'RCTBlob',
+    'RCTImage',
+    'RCTText',
+    'RCTNetwork',
+    'RCTWebSocket',
+    'DevSupport',
+  ]
+  pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+  pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+end
+
+post_install do |installer|
+  # Disable some shitty RN stuff (I can't see degradation in functional)
+  installer.pods_project.targets.each do |target|
+    if target.name == 'React'
+      target.build_configurations.each do |config|
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)']
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] << 'RCT_ENABLE_INSPECTOR=0'
+        config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] << 'ENABLE_PACKAGER_CONNECTION=0'
+      end
+    end
+  end
+end
