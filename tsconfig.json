@@ -15,7 +15,11 @@
         "preserveSymlinks": true,
         "strict": true,
         "target": "es6",
-        "types": ["react", "react-native"]
+        "types": ["react", "react-native"],
+        "paths": {
+            "jest": ["node_modules/@types/jest/index.d.ts"],
+            "react-native-gesture-handler": ["types/react-native-gesture-handler.d.ts"]
+        }
     },
     "exclude": [ "jest", "node_modules", "scripts" ]
 }
