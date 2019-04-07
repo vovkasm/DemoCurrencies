@@ -1,4 +1,5 @@
 import { AppRegistry } from 'react-native'
+import { createAppContainer, createStackNavigator } from 'react-navigation'
 
 import MainScreen from 'src/Screens/MainScreen'
 
@@ -13,6 +14,10 @@ export default class Application {
   }
 
   bootstrap() {
-    AppRegistry.registerComponent('DemoCurrencies', () => MainScreen)
+    const AppNavigator = createStackNavigator({
+      Main: { screen: MainScreen },
+    })
+    const AppContainer = createAppContainer(AppNavigator)
+    AppRegistry.registerComponent('DemoCurrencies', () => AppContainer)
   }
 }
