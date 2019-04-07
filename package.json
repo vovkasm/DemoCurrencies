@@ -11,6 +11,9 @@
     "start": "react-native start"
   },
   "dependencies": {
+    "mobx": "^4.9.4",
+    "mobx-react": "^5.4.3",
+    "mobx-utils": "^5.2.0",
     "query-string": "^6.4.2",
     "react": "16.8.3",
     "react-native": "0.59.3",
