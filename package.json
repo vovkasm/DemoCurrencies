@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "js:check": "tsc -p tsconfig.json",
+    "js:lint": "tslint -p tsconfig.json",
+    "prettier": "prettier --write '**/*.{ts,tsx}'",
+    "test": "npm run js:check --silent && npm run js:lint --silent",
     "start": "react-native start"
   },
   "dependencies": {
@@ -12,6 +16,13 @@
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/runtime": "^7.4.3",
-    "metro-react-native-babel-preset": "^0.53.1"
+    "@types/react": "^16.8.12",
+    "@types/react-native": "^0.57.42",
+    "@vovkasm/tslint-config": "^2.0.1",
+    "metro-react-native-babel-preset": "^0.53.1",
+    "prettier": "^1.16.4",
+    "tslint": "^5.15.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.4.2"
   }
 }
