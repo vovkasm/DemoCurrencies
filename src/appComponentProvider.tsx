@@ -2,7 +2,7 @@ import React from 'react'
 import { ComponentProvider } from 'react-native'
 import { NavigationContainer, NavigationContainerComponent } from 'react-navigation'
 
-import Application from 'src//Application'
+import Application from 'src/Application'
 
 export function createAppComponentProvider(NavContainer: NavigationContainer): ComponentProvider {
   return () => {
