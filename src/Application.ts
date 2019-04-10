@@ -8,9 +8,6 @@ import {
 
 import Api from 'src/Api'
 import { createAppComponentProvider } from 'src/appComponentProvider'
-import FilterScreen from 'src/Screens/FilterScreen'
-import ListScreen from 'src/Screens/ListScreen'
-import MainScreen from 'src/Screens/MainScreen'
 import { ExchangeRatesViewModel } from './Model/ExchangeRatesViewModel'
 
 export default class Application {
@@ -38,16 +35,16 @@ export default class Application {
   bootstrap() {
     const AppNavigator = createStackNavigator(
       {
-        Filter: { screen: FilterScreen },
-        List: { screen: ListScreen },
-        Main: { screen: MainScreen },
+        Filter: { screen: require('src/Screens/FilterScreen').default },
+        List: { screen: require('src/Screens/ListScreen').default },
+        Main: { screen: require('src/Screens/MainScreen').default },
       },
       {
         initialRouteName: 'Main',
       },
     )
     const AppContainer = createAppContainer(AppNavigator)
-    AppRegistry.registerComponent('DemoCurrencies', createAppComponentProvider(AppContainer))
+    AppRegistry.registerComponent('DemoCurrencies', createAppComponentProvider(this, AppContainer))
   }
 
   showExchangeRates() {

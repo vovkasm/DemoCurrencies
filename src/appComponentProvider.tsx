@@ -2,9 +2,9 @@ import React from 'react'
 import { ComponentProvider } from 'react-native'
 import { NavigationContainer, NavigationContainerComponent } from 'react-navigation'
 
-import Application from 'src/Application'
+import { IApplication } from 'src/types'
 
-export function createAppComponentProvider(NavContainer: NavigationContainer): ComponentProvider {
+export function createAppComponentProvider(app: IApplication, NavContainer: NavigationContainer): ComponentProvider {
   return () => {
     return class AppContainer extends React.Component {
       render() {
@@ -12,7 +12,7 @@ export function createAppComponentProvider(NavContainer: NavigationContainer): C
       }
       private setNavigatorRef(navigator: NavigationContainerComponent | null) {
         if (navigator) {
-          Application.instance.setNavigator(navigator)
+          app.setNavigator(navigator)
         }
       }
     }
