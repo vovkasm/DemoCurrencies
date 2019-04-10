@@ -26,7 +26,9 @@ export default class FilterScreen extends React.Component<NavigationScreenProps<
     return (
       <View style={s.container}>
         <NavigationEvents onDidFocus={this.onFocus} onWillBlur={this.onBack} />
-        <TextInput placeholder="RUB,USD for ex." style={s.input} onChangeText={this.onChange} value={this.text} />
+        <View style={s.inputContainer}>
+          <TextInput placeholder="RUB,USD for ex." style={s.input} onChangeText={this.onChange} value={this.text} />
+        </View>
       </View>
     )
   }
@@ -52,6 +54,13 @@ const s = StyleSheet.create({
     flex: 1,
   },
   input: {
-    width: '100%',
+    flex: 1,
+    padding: 8,
+  },
+  inputContainer: {
+    backgroundColor: 'rgb(250,250,250)',
+    borderRadius: 8,
+    flexDirection: 'row',
+    margin: 8,
   },
 })
