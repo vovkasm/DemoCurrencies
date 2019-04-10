@@ -4,7 +4,7 @@
 
 ```sh
 npm ci
-open ios/DemoCurrencies.xcworkspace # opens Xcode
+npm run xcode # open the project in Xcode
 npm start # starts bundler
 # Go to Xcode and run application
 ```

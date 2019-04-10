@@ -8,7 +8,8 @@
     "js:test": "jest",
     "prettier": "prettier --write '**/*.{ts,tsx}'",
     "test": "npm run js:check --silent && npm run js:lint --silent && npm run js:test --silent",
-    "start": "react-native start"
+    "start": "react-native start",
+    "xcode": "open ios/DemoCurrencies.xcworkspace"
   },
   "dependencies": {
     "mobx": "^4.9.4",
