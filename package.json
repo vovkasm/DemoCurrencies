@@ -16,7 +16,7 @@
     "mobx-utils": "^5.2.0",
     "query-string": "^6.4.2",
     "react": "16.8.3",
-    "react-native": "0.59.3",
+    "react-native": "0.59.4",
     "react-native-gesture-handler": "^1.1.0",
     "react-navigation": "^3.6.1"
   },
